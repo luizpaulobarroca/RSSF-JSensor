@@ -60,15 +60,17 @@ public class FloodingNode extends Node{
 //                       this.multicast(message);
                    }
                } else if(floodingMessage.getMsg().equals("Found")) {
-                   if(time0 == null) {
-                       time0 = Jsensor.currentTime;
-                       timef = time0 + 10;
-                   }
-                   neighboors.add((FloodingNode)floodingMessage.getSender());
+                   this.neighboors.add((FloodingNode)floodingMessage.getSender());
                    Jsensor.log("time: "+ Jsensor.currentTime +
                            "\t sensorID: " +this.ID+
                            "\t receivedFrom: " +floodingMessage.getSender().getID()+
                            "\t Dist" + this.dist(floodingMessage.getSender()));
+               } else if(floodingMessage.getMsg().equals("Sending")) {
+                   Jsensor.log("time: "+ Jsensor.currentTime +
+                           "\t sensorID: " +this.ID+
+                           "\t receivedFrom: " +floodingMessage.getSender().getID());
+                   FloodingTimer ft = new FloodingTimer();
+                   ft.startRelative(5, this);
                }
            }        
        }
