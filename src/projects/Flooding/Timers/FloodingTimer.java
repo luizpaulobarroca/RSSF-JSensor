@@ -28,7 +28,12 @@ public class FloodingTimer extends TimerEvent{
 		Jsensor.log("time: "+ Jsensor.currentTime +"\t sensorID: "+this.node.getID()+ "\t searching next node");
 //    	Jsensor.log("time: "+ Jsensor.currentTime +"\t sensorID: "+this.node.getID()+ "\t sendTo: " +destination.getID());
 		
-    	GenerateFilesOmnet.addStartNode(this.node.getID(), destination.getID(), Jsensor.currentTime);
+
+        GenerateFilesOmnet.addStartNode(this.node.getID(), destination.getID(), Jsensor.currentTime);
+
+        ReceivingTimer rt = new ReceivingTimer();
+        rt.startRelative(20, this.node);
+
 	    this.node.multicast(message);
     }    
 }
