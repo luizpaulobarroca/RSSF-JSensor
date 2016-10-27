@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4d78622-f6c1-437e-bd6d-147fe5e8c6e9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/log-25102016-204926.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/log-25102016-205026.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/log-25102016-205057.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/log-25102016-205515.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/userLog-25102016-204926.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/userLog-25102016-205026.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/userLog-25102016-205057.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Results/userLog-25102016-205515.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/projects/Flooding/Sensors/FloodingNode.class" afterPath="$PROJECT_DIR$/bin/projects/Flooding/Sensors/FloodingNode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/projects/Flooding/Timers/FloodingTimer.class" afterPath="$PROJECT_DIR$/bin/projects/Flooding/Timers/FloodingTimer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/projects/Flooding/Sensors/FloodingNode.java" afterPath="$PROJECT_DIR$/src/projects/Flooding/Sensors/FloodingNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/projects/Flooding/Timers/FloodingTimer.java" afterPath="$PROJECT_DIR$/src/projects/Flooding/Timers/FloodingTimer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/projects/Flooding/Timers/ReceivingTimer.java" afterPath="$PROJECT_DIR$/src/projects/Flooding/Timers/ReceivingTimer.java" />
     </list>
     <ignored path="JSensor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,13 +48,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FloodingNode.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FloodingNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/projects/Flooding/Sensors/FloodingNode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="397">
               <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloodingNode.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/projects/Flooding/Sensors/FloodingNode.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#4186#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloodingTimer.class" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/projects/Flooding/Timers/FloodingTimer.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#1101#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -846,7 +859,7 @@
       <workItem from="1477496782237" duration="4231000" />
       <workItem from="1477513379457" duration="11000" />
       <workItem from="1477531694236" duration="1587000" />
-      <workItem from="1477533383048" duration="1916000" />
+      <workItem from="1477533383048" duration="1944000" />
     </task>
     <task id="LOCAL-00001" summary="missing logs and some adjustments">
       <created>1477499612340</created>
@@ -862,11 +875,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477501005966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="No more errors, infinite loop">
+      <created>1477535317134</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1477535317134</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23571000" />
+    <option name="totallyTimeSpent" value="23599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -916,7 +936,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="missing logs and some adjustments" />
     <MESSAGE value="few adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="few adjustments" />
+    <MESSAGE value="No more errors, infinite loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="No more errors, infinite loop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1346,6 +1367,26 @@
           <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/projects/Flooding/Sensors/FloodingNode.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#4186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/projects/Flooding/Timers/FloodingTimer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1101#0" expanded="true" />
           </folding>
         </state>
       </provider>
