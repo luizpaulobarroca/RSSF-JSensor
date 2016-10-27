@@ -25,11 +25,6 @@ public class FloodingNode extends Node{
 
     @Override
     public void handleMessages(Inbox inbox) {
-        if (Jsensor.currentTime > timef) {
-            time0 = null;
-            timef = null;
-            this.chooseBest();
-        }
        while(inbox.hasMoreMessages()) {
            Message message = inbox.getNextMessage();
            if(message instanceof FloodingMessage) {
@@ -38,29 +33,33 @@ public class FloodingNode extends Node{
                    continue;
                }
                this.messagesIDs.add(floodingMessage.getID());
-               if(floodingMessage.getDestination().equals(this)) {
+               if(floodingMessage.getDestination().equals(this) && !floodingMessage.getMsg().equals("Found")) {
                    Jsensor.log("time: "+ Jsensor.currentTime +
                            "\t sensorID: " +this.ID+
                            "\t receivedFrom: " +floodingMessage.getSender().getID()+
                            "\t hops: "+ floodingMessage.getHops() +
                            "\t msg: " +floodingMessage.getMsg().concat(this.ID+""));
                } else if(floodingMessage.getMsg().equals("Searching")) {
-                   int n = 999999;
-                   int cont=0;
-                   for (int i=1;i<=n;i++ ){
-                       if(n%i == 0)
-                           cont=cont+1;
-                   }
-
-                   if (cont > 0){
+//                   int n = 999999;
+//                   int cont=0;
+//                   for (int i=1;i<=n;i++ ){
+//                       if(n%i == 0)
+//                           cont=cont+1;
+//                   }
+//
+//                   if (cont > 0){
                        floodingMessage.setMsg("Found");
                        floodingMessage.setDestination(floodingMessage.getSender());
                        floodingMessage.setSender(this);
+//                       System.out.println("enviado por: " + floodingMessage.getSender().getID() );
+//                       System.out.println(this.getID() + " recebeu Searching, enviando "+ floodingMessage.getMsg() +" para: " + floodingMessage.getDestination().getID());
                        this.unicast(floodingMessage, floodingMessage.getDestination());
 //                       this.multicast(message);
-                   }
+//                   }
                } else if(floodingMessage.getMsg().equals("Found")) {
+//                   System.out.println("recebeu found");
                    this.neighboors.add((FloodingNode)floodingMessage.getSender());
+//                   System.out.println(floodingMessage.getSender().getID());
                    Jsensor.log("time: "+ Jsensor.currentTime +
                            "\t sensorID: " +this.ID+
                            "\t receivedFrom: " +floodingMessage.getSender().getID()+
@@ -86,7 +85,7 @@ public class FloodingNode extends Node{
         if(this.ID == 1) {
             FloodingTimer.sink = this;
         }
-        if(this.ID == 2)
+        if(this.ID == 30)
         {
         	int time = 10 + this.ID * 10;
         	FloodingTimer ft = new FloodingTimer();
@@ -103,17 +102,24 @@ public class FloodingNode extends Node{
     }
 
     public FloodingNode chooseBest () {
+        if(neighboors.size() == 0) {
+//            System.out.println("eteste");
+            return null;
+        }
         FloodingNode bestNode = this;
         double bestDist = 999999999;
         for (Node e : neighboors) {
             double actualDist = this.dist(e);
+//            System.out.println(actualDist);
             if(actualDist < bestDist) {
                 bestDist = actualDist;
                 bestNode = (FloodingNode) e;
             }
         }
-        if(bestNode == this)
+        if(bestNode == this){
+//            System.out.println("etesasdasdte");
             return null;
+        }
         return bestNode;
     }
 }

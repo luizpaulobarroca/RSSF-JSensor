@@ -31,9 +31,10 @@ public class FloodingTimer extends TimerEvent{
 
         GenerateFilesOmnet.addStartNode(this.node.getID(), destination.getID(), Jsensor.currentTime);
 
-        ReceivingTimer rt = new ReceivingTimer();
-        rt.startRelative(20, this.node);
 
 	    this.node.multicast(message);
+
+        ReceivingTimer rt = new ReceivingTimer();
+        rt.startRelative(800, this.node);
     }    
 }

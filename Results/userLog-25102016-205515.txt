@@ -1,2 +1,0 @@
-time: 20	 sensorID: 1	 sendTo: 340
-time: 90	 sensorID: 340	 receivedFrom: 1	 hops: 7	 msg: Created by the sensor: 1 Path: 460 - 58 - 583 - 254 - 574 - 25 - 340
