@@ -35,6 +35,6 @@ public class FloodingTimer extends TimerEvent{
 	    this.node.multicast(message);
 
         ReceivingTimer rt = new ReceivingTimer();
-        rt.startRelative(800, this.node);
+        rt.startRelative(35, this.node);
     }    
 }

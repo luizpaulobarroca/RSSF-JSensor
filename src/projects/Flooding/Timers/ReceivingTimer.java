@@ -13,8 +13,6 @@ public class ReceivingTimer extends TimerEvent {
         FloodingMessage message = new FloodingMessage(this.node, FloodingTimer.sink, 0, "", this.node.getChunk());
         message.setMsg("Sending");
 
-//        System.out.println(node.getID() + "aaaa");
-//        System.out.println(dest.getID() + "bbbb");
         node.unicast(message, dest);
     }
 }
